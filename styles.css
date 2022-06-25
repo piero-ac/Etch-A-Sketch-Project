@@ -86,10 +86,23 @@ main {
     row-gap: 50px;
 }
 
+#settings-container input {
+    background-color: #ECB390;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 0px;
+    width: 120px;
+    height: 40px;
+}
+
 button {
     background-color: #ECB390;
     color: #DD4A48;
-    width: 40px;
-    height: 20px;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0px;
+    font-size: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
