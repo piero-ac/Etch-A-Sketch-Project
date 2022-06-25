@@ -24,7 +24,7 @@ body {
 
 header {
     font-size: 4rem;
-    color: #ECB390;
+    color: #DD4A48;
 }
 
 main {
@@ -42,12 +42,40 @@ main {
     border-radius: 5px;
     height: 550px;
     width: 600px;
+    background-color: #DD4A48;
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 10px;
+    padding: 15px 20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
+}
+
+#sketch-board {
+    /* border: 3px solid orange; */
+    border-radius: 5px;
+    height: 450px;
+    background-color: gainsboro;
+}
+
+#circle-container {
+    /* border: 3px solid black; */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.circle {
+    
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 #settings-container {
     border: 3px solid blue;
     height: 550px;
     padding: auto 20px;
-
 }
+
