@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="./script.js" defer></script>
     <title>Etch-A-Sketch</title>
   </head>
   <body>
@@ -25,13 +26,15 @@
       </section>
       <aside id="settings-container">
         <div id="range-container">
-          <label for="gridsize-picker">16x16</label>
+          <label id="gridsize-label" for="gridsize-picker">16 x 16</label>
           <input
             type="range"
             name="gridsize-picker"
             id="gridsize-picker"
             min="16"
             max="64"
+            step="2"
+            value="16"
           />
         </div>
 
