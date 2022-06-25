@@ -30,7 +30,7 @@ header {
 
 main {
     display: flex;
-    border: 3px solid black;
+    /* border: 3px solid black; */
     height: 600px;
     width: 70%;
     padding: 10px;
@@ -50,6 +50,7 @@ main {
     row-gap: 10px;
     padding: 15px 20px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    align-items: center;
 
 }
 
@@ -114,5 +115,9 @@ button {
     border: 0px;
     font-size: 2rem;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+footer {
+    margin-top: auto;
 }
 
