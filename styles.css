@@ -35,6 +35,7 @@ main {
     padding: 10px;
     justify-content: center;
     align-items: center;
+    column-gap: 20px;
 }
 
 #sketch-container {
@@ -76,6 +77,19 @@ main {
 #settings-container {
     border: 3px solid blue;
     height: 550px;
+    min-width: 200px;
     padding: auto 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 50px;
+}
+
+button {
+    background-color: #ECB390;
+    color: #DD4A48;
+    width: 40px;
+    height: 20px;
 }
 
