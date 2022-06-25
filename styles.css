@@ -17,11 +17,37 @@ body {
     font-size: 1rem;
     font-family: 'Josefina Sans', sans-serif;
     background-color: #F5EEDC;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 }
 
 header {
     font-size: 4rem;
-    text-align: center;
     color: #ECB390;
-    
+}
+
+main {
+    display: flex;
+    border: 3px solid black;
+    height: 600px;
+    width: 70%;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#sketch-container {
+    border: 3px solid red;
+    border-radius: 5px;
+    height: 550px;
+    width: 600px;
+
+}
+
+#settings-container {
+    border: 3px solid blue;
+    height: 550px;
+    padding: auto 20px;
+
 }
