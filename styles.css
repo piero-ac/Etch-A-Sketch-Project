@@ -1,4 +1,5 @@
 /* font-family: 'Josefin Sans', sans-serif; */
+/* https://colorhunt.co/palette/c0d8c0f5eedcdd4a48ecb390 */
 
 *,
 *::before,
@@ -14,4 +15,13 @@ html {
 
 body {
     font-size: 1rem;
+    font-family: 'Josefina Sans', sans-serif;
+    background-color: #F5EEDC;
+}
+
+header {
+    font-size: 4rem;
+    text-align: center;
+    color: #ECB390;
+    
 }
