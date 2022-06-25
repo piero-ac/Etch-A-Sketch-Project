@@ -20,6 +20,7 @@ body {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    min-height: 100vh;
 }
 
 header {
@@ -39,10 +40,10 @@ main {
 }
 
 #sketch-container {
-    border: 3px solid red;
+    /* border: 3px solid red; */
     border-radius: 5px;
-    height: 550px;
-    width: 600px;
+    height: 500px;
+    width: 500px;
     background-color: #DD4A48;
     display: flex;
     flex-flow: column nowrap;
@@ -55,8 +56,9 @@ main {
 #sketch-board {
     /* border: 3px solid orange; */
     border-radius: 5px;
+    width: 450px;
     height: 450px;
-    background-color: gainsboro;
+    background-color: whitesmoke;
 }
 
 #circle-container {
@@ -66,7 +68,6 @@ main {
     width: 100%;
 }
 .circle {
-    
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -75,8 +76,8 @@ main {
 }
 
 #settings-container {
-    border: 3px solid blue;
-    height: 550px;
+    /* border: 3px solid blue; */
+    height: 500px;
     min-width: 200px;
     padding: auto 20px;
     display: flex;
@@ -86,13 +87,22 @@ main {
     row-gap: 50px;
 }
 
-#settings-container input {
+#settings-container input[type=color] {
     background-color: #ECB390;
     padding: 5px 10px;
     border-radius: 5px;
     border: 0px;
     width: 120px;
     height: 40px;
+}
+
+#range-container {
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 10px;
+    font-size: 2rem;
+    color: #DD4A48;
+    align-items: center;
 }
 
 button {

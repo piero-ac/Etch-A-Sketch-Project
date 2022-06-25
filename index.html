@@ -24,13 +24,17 @@
         </div>
       </section>
       <aside id="settings-container">
-        <input
-          type="range"
-          name="gridsize-picker"
-          id="gridsize-picker"
-          min="16"
-          max="64"
-        />
+        <div id="range-container">
+          <label for="gridsize-picker">16x16</label>
+          <input
+            type="range"
+            name="gridsize-picker"
+            id="gridsize-picker"
+            min="16"
+            max="64"
+          />
+        </div>
+
         <input type="color" name="color-picker" id="color-picker" />
         <button>Eraser</button>
         <button>Clear</button>
