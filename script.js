@@ -31,6 +31,13 @@ gridSizePicker.addEventListener("change", function(){
   populateGrid(currentGridSize);
 });
 
+// Event listener to update the color for sketching
+colorPicker.addEventListener("change", function() {
+  coloringMode = true;
+  erasingMode = false;
+  sketchingColor = colorPicker.value;
+});
+
 // Event listener to clear the sketchboard
 clearButton.addEventListener("click", clearBoard);
 
