@@ -88,11 +88,12 @@ function createGridSquare(currentGridSize) {
   gridSquare.classList.add("grid-square");
   gridSquare.style.height = gridSquareHeightAndWidth + "px";
   gridSquare.style.width = gridSquareHeightAndWidth + "px";
-  gridSquare.addEventListener("mouseover", changeColor);
+  gridSquare.addEventListener("mouseover", changeGridSquareColor);
+  gridSquare.addEventListener("mousedown", changeGridSquareColor);
   return gridSquare;
 }
 
-function changeColor(event) {
+function changeGridSquareColor(event) {
   if (erasingMode && !coloringMode && !rainbowMode) {
     event.target.style.backgroundColor = "whitesmoke";
   } else if (!erasingMode && coloringMode && !rainbowMode) {
