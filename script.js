@@ -60,7 +60,7 @@ colorModeButton.addEventListener("click", function() {
 // Event listener to enter rainbow coloring mode
 rainbowModeButton.addEventListener("click", function(){
   erasingMode = false;
-  coloringMode = true;
+  coloringMode = false;
   rainbowMode = true;
 
 });
@@ -86,11 +86,11 @@ function createGridSquare(currentGridSize){
     gridSquare.style.height = gridSquareHeightAndWidth + "px";
     gridSquare.style.width = gridSquareHeightAndWidth + "px";
     gridSquare.addEventListener("mouseover", function(event) {
-        if(erasingMode && !coloringMode) {
+        if(erasingMode && !coloringMode && !rainbowMode) {
           event.target.style.backgroundColor = "whitesmoke";
-        } else if(coloringMode && !rainbowMode) {
+        } else if(!erasingMode && coloringMode && !rainbowMode) {
           event.target.style.backgroundColor = sketchingColor;  
-        } else {
+        } else if(!erasingMode && !coloringMode && rainbowMode) {
           event.target.style.backgroundColor = generateRandomRGBValue();
         }
         
@@ -101,6 +101,7 @@ function createGridSquare(currentGridSize){
 function clearBoard(){
   coloringMode = true;
     erasingMode = false;
+    rainbowMode = false;
     const gridSquares = sketchBoard.childNodes;
     gridSquares.forEach(gridSquare => {
         gridSquare.style.backgroundColor = "whitesmoke";
