@@ -21,6 +21,7 @@ gridSizePicker.addEventListener("change", function() {
 // Event listener to update the number of square in the sketchboard
 
 // Event listener to clear the sketchboard
+clearButton.addEventListener("click", clearBoard);
 
 
 
@@ -46,7 +47,10 @@ function createGridSquare(currentGridSize){
     return gridSquare;
 }
 
-// function clearBoard(){
-//     const gridSquares = sketchBoard.
-// }
+function clearBoard(){
+    const gridSquares = sketchBoard.childNodes;
+    gridSquares.forEach(gridSquare => {
+        gridSquare.style.backgroundColor = "whitesmoke";
+    });
+}
 
