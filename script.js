@@ -94,6 +94,7 @@ function createGridSquare(currentGridSize) {
 }
 
 function changeGridSquareColor(event) {
+  if (event.type == "mouseover" && !mouseIsDown) return;
   if (erasingMode && !coloringMode && !rainbowMode) {
     event.target.style.backgroundColor = "whitesmoke";
   } else if (!erasingMode && coloringMode && !rainbowMode) {
