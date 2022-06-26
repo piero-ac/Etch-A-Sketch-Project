@@ -3,6 +3,7 @@ const gridSizePicker = document.getElementById("gridsize-picker");
 const gridSizeLabel = document.getElementById("gridsize-label");
 const colorPicker = document.getElementById("color-picker");
 const colorModeButton = document.getElementById("color-mode-btn");
+const rainbowModeButton = document.getElementById("rainbow-btn");
 const clearButton = document.getElementById("clear-btn");
 const eraserButton = document.getElementById("eraser-btn");
 const sketchBoardWidth = 500;
@@ -10,6 +11,7 @@ const sketchBoardWidth = 500;
 let sketchingColor = colorPicker.value;
 let currentGridSize = parseInt(gridSizePicker.value);
 let coloringMode = true;
+let rainbowMode = false;
 let erasingMode = false;
 
 // Run the populateGrid function on window load
@@ -17,24 +19,24 @@ window.onload = populateGrid(currentGridSize);
 
 // Grid Size Picker event listener to update the text showing current grid size
 gridSizePicker.addEventListener("change", function() {
-    coloringMode = true;
-    erasingMode = false;
     currentGridSize = gridSizePicker.value;
     gridSizeLabel.textContent = currentGridSize + " x " + currentGridSize;
 });
 
 // Event listener to update the number of square in the sketchboard
 gridSizePicker.addEventListener("change", function(){
-  coloringMode = true;
   erasingMode = false;
+  coloringMode = true;
+  rainbowMode = false;
   unpopulateGrid();
   populateGrid(currentGridSize);
 });
 
 // Event listener to update the color for sketching
 colorPicker.addEventListener("change", function() {
-  coloringMode = true;
   erasingMode = false;
+  coloringMode = true;
+  rainbowMode = false;
   sketchingColor = colorPicker.value;
 });
 
@@ -45,12 +47,22 @@ clearButton.addEventListener("click", clearBoard);
 eraserButton.addEventListener("click", function() {
     erasingMode = true;
     coloringMode = false;
+    rainbowMode = false;
 });
 
 // Event listener to enter coloring mode
 colorModeButton.addEventListener("click", function() {
   erasingMode = false;
   coloringMode = true;
+  rainbowMode = false;
+});
+
+// Event listener to enter rainbow coloring mode
+rainbowModeButton.addEventListener("click", function(){
+  erasingMode = false;
+  coloringMode = true;
+  rainbowMode = true;
+
 });
 
 function unpopulateGrid() {
@@ -76,8 +88,10 @@ function createGridSquare(currentGridSize){
     gridSquare.addEventListener("mouseover", function(event) {
         if(erasingMode && !coloringMode) {
           event.target.style.backgroundColor = "whitesmoke";
-        } else {
+        } else if(coloringMode && !rainbowMode) {
           event.target.style.backgroundColor = sketchingColor;  
+        } else {
+          event.target.style.backgroundColor = generateRandomRGBValue();
         }
         
     });
@@ -93,3 +107,10 @@ function clearBoard(){
     });
 }
 
+
+function generateRandomRGBValue(){
+  const R = Math.floor(Math.random() * 256);
+  const G = Math.floor(Math.random() * 256);
+  const B = Math.floor(Math.random() * 256);
+  return `rgb(${R},${G},${B})`;
+}
