@@ -36,14 +36,15 @@ main {
     padding: 10px;
     justify-content: center;
     align-items: center;
-    column-gap: 20px;
+    column-gap: 20px; 
+    margin-top: 10px;
 }
 
 #sketch-container {
     /* border: 3px solid red; */
     border-radius: 5px;
-    height: 500px;
-    width: 500px;
+    height: 600px;
+    width: 550px;
     background-color: #DD4A48;
     display: flex;
     flex-flow: column nowrap;
@@ -56,10 +57,11 @@ main {
 
 #sketch-board {
     /* border: 3px solid orange; */
-    border-radius: 5px;
-    width: 450px;
-    height: 450px;
+    width: 500px;
+    height: 500px;
     background-color: whitesmoke;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 #circle-container {
