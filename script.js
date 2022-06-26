@@ -14,6 +14,10 @@ let coloringMode = true;
 let rainbowMode = false;
 let erasingMode = false;
 
+let mouseIsDown = false;
+document.body.addEventListener("mousedown", () => (mouseIsDown = true));
+document.body.addEventListener("mouseup", () => (mouseIsDown = false));
+
 // Run the populateGrid function on window load
 window.onload = populateGrid(currentGridSize);
 
@@ -84,16 +88,18 @@ function createGridSquare(currentGridSize) {
   gridSquare.classList.add("grid-square");
   gridSquare.style.height = gridSquareHeightAndWidth + "px";
   gridSquare.style.width = gridSquareHeightAndWidth + "px";
-  gridSquare.addEventListener("mouseover", function (event) {
-    if (erasingMode && !coloringMode && !rainbowMode) {
-      event.target.style.backgroundColor = "whitesmoke";
-    } else if (!erasingMode && coloringMode && !rainbowMode) {
-      event.target.style.backgroundColor = sketchingColor;
-    } else if (!erasingMode && !coloringMode && rainbowMode) {
-      event.target.style.backgroundColor = generateRandomRGBValue();
-    }
-  });
+  gridSquare.addEventListener("mouseover", changeColor);
   return gridSquare;
+}
+
+function changeColor(event) {
+  if (erasingMode && !coloringMode && !rainbowMode) {
+    event.target.style.backgroundColor = "whitesmoke";
+  } else if (!erasingMode && coloringMode && !rainbowMode) {
+    event.target.style.backgroundColor = sketchingColor;
+  } else if (!erasingMode && !coloringMode && rainbowMode) {
+    event.target.style.backgroundColor = generateRandomRGBValue();
+  }
 }
 
 function clearBoard() {
